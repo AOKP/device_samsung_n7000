@@ -38,10 +38,7 @@ PRODUCT_COPY_FILES += \
 	device/samsung/n7000/configs/vold.fstab:system/etc/vold.fstab
 
 PRODUCT_PROPERTY_OVERRIDES := \
-	ro.vold.switchablepair=/mnt/emmc,/mnt/sdcard
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.vold.switchexternal=1
+    ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 
 # Wifi
 PRODUCT_COPY_FILES += \

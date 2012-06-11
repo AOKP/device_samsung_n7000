@@ -46,7 +46,8 @@ TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_RECOVERY_INITRC := device/samsung/n7000/recovery.rc
 
-BOARD_NAND_PAGE_SIZE := 4096 -s 128
+BOARD_NAND_PAGE_SIZE := 4096
+BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
@@ -130,6 +131,11 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/n7000/overlay/include
+
+# Charging mode
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
+BOARD_BATTERY_DEVICE_NAME := "battery"
+BOARD_CHARGER_RES := device/samsung/galaxys2/res/charger
 
 # assert, galaxynote needs to be removed later
 TARGET_OTA_ASSERT_DEVICE := galaxynote,n7000,GT-N7000

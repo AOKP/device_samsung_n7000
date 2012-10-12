@@ -14,13 +14,13 @@
 # limitations under the License.
 #
 
-# Include common makefile
-$(call inherit-product, device/samsung/galaxys2-common/common.mk)
-
 LOCAL_PATH := device/samsung/n7000
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+# Include common makefile
+$(call inherit-product, device/samsung/galaxys2-common/common.mk)
 
 # This device is xhdpi.
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
@@ -28,7 +28,8 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_LOCALES += xhdpi
 
 #Bootanimation
-TARGET_BOOTANIMATION_NAME := vertical-800x1280
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 800
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
